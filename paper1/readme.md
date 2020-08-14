@@ -129,3 +129,20 @@ Coupling objects through the IDE Inspector In Unity, it's miles feasible to coup
 
 The predominant poor impact of this programming exercise is the
 loss of understandability, i.E., couplings will now no longer be seen from the supply code, however simplest from the Inspector. Much worse, if a developer edits the supply code, or renames scripts or gadgets, couplings are lost, and that they want to be restored manually. There are options to this, consisting of using a messaging device to couple unique gadgets withinside the game. However, such options would possibly be, in some cases, sub-premier for what issues performances.
+
+# 3.3 Behavioral Smells
+
+Animation speed depends on the frame rate If a script plays a translation, rotation, or scaling of a set significance to an item in an Update method, this type of transformation is repeated at each body. As a result, the animation is probably greater or less speedy relying at the body price. This odor is likewise glaring in the Sphere translation of Fig. 2-b. To keep away from the odor, a standard solution followed is to multiply the significance through Time.DeltaTime, which returns the delta time among next frames. In other words, the supply code in Fig. 2-b becomes:
+                            
+            mySphere.Transform.Translate(0f, 0f,
+                    1f*Time.DeltaTime);
+In this type of way, the animation velocity can be impartial of the body price.And methods to keep away from or mitigate the odor. Then, we ask to offer a relevance rating in a 5-stage Likert scale [41]. Finally, for every query, the respondent ought to upload an non-compulsory open comment. An instance of query for the odor “Allocating and destroying GameObjects in updates” is suggested in Fig. 3.
+
+• A very last segment with questions on the general, perceived
+usefulness of a Unity linter, i.E., (i) whether or not they understand the provision of this type of device useful, and (ii) whether or not they might be inclined to undertake it (note: someone ought to understand it as useful, however now no longer for her/him, only for a few classes of users, e.G., junior developers). Finally, we ask to offer free
+feedback approximately feasible smells the respondent understand as pplicable however that turned into now no longer taken into consideration in our study.
+
+To recruit participants, we published the questionnaire on Reddit channels associated with video video games and Unity development, namely gamedev and unity3d. When we published the questionnaire, we added a brief message explaining its purpose, the envisioned duration (10- 15 min.) and a message telling that we might handiest use the collected
+statistics in aggregated, anonymized shape.
+
+We file the effects of RQ1 through displaying the perceived relevance in shape of diverging stacked bar charts. We additionally speak the open feedback made through the respondents.

@@ -103,3 +103,15 @@ the scent statically, although the detection is approximate; and (iii) thinking 
 
 In the subsequent, we in short describe the 6 sorts of smells we have identified. We categorize them consistent with their negative impact they'll cause, i.E., on performance, maintainability and
 behavior.
+
+# 3.1 Performance Smells
+
+Allocating and destroying GameObjects in updates. In Unity,
+GameObjects may be allotted statically, i.E., dragging them in the scene hierarchy thru the IDE, or dynamically, i.E., instantiating them the usage of the Instantiate as defined in Section 2. When items are now not needed, they can be destroyed the usage of the Destroy approach. Both Instantiate and Destroy are computationally expensive, and their use in Update () approach may have an effect on the sport performances. If the sport calls for to allocate and wreck many items at runtime (e.G., bullets in a taking pictures game) it's far recommended to use an item pool. In different words, a pool of GameObjects is allotted at runtime and, whilst required, GameObjects are retrieved from the pool and disposed there whilst now not needed. The supply code in Fig. 1-b reveals the defined smell, because the bullet is dynamically load and instantiated at each frame.
+
+Getting a GameObject reference locating it through name. In Unity, a GameObject ought to receives the reference of some other one through searching it through name. In the instance of Fig. 1-a, a GameObject ought to get the reference of the Cube the usage of the instruction:GameObject. Find ("Cube")  This get right of entry to approach is discouraged as it impacts performances.
+
+A comparable problem (FindViewById) is thought additionally in Android [47]. Therefore, it's far foremost to keep away from this reference mechanism, and get get right of entry to to different items thru express dependencies instead.
+
+Heavyweight Update strategies. Since all Update () strategies are invoked at each frame, acting computationally-in depth operations in such strategies may negatively have an effect on performances. Sometimes that is simply unavoidable; however, whilst possible, it's far recommended to aspect out computations that don't require to be executed
+each time, shifting them.

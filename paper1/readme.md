@@ -55,3 +55,21 @@ The contribution of this paper may be summarized as follows:
 (4) we make the dataset of the observe available [19]. 
 Upon acceptance, we additionally plan to launch the device as open-supply.
 
+# 2 BACKGROUND NOTIONS ABOUT UNITY
+
+This phase gives a short creation to Unity, to allow the reader
+well information the principles added at some stage in the
+paper. Fig. 1-a suggests a screenshot of the Unity improvement environment. A Unity undertaking can both be a 2D or 3-d undertaking (withinside the following we can especially display examples for 3-d projects, as 2D is frequently a subset of 3-d) composed of 1 or greater scenes. A scene describes an interplay area, e.G., a bit of the sport global wherein a participant interacts with different objects. The scene, in turn, carries GameObjects which might be instantiated both statically or dynamically. In our example, the undertaking consists of a scene SampleScene, whose item hierarchy is seen at the left-facet pane of the IDE. More specifically, a scene
+carries a camera (Main Camera), that is the angle from
+which the consumer sees the scene, a light (Directional Light), and a Cube item (additionally seen on the middle of the screen).
+Other than the use of the standard extension mechanisms of objectoriented (OO) programming, Unity permits builders to decorate an item with numerous forms of components, that may be seen on the right-facet pane (i.E., the Inspector). More specifically, an item has a default belongings named transform, which specifies the item position, rotation, and scaling, and different components, e.G., a collider
+that handles collisions with different objects, a material (in our case named MyColor) that specifies the item’s visible aspect. Last, however
+now no longer least, it's miles feasible to feature one or greater scripts to specify conduct.
+
+In our case, the dice has connected a script named Move Cube (whose content material is proven in Fig. 1-b).
+Unity’s conduct is targeted the use of scripts written in C#1. A
+applicable magnificence in Unity is MonoBehaviour, and C# training connected to GameObjects inherit from MonoBehaviour. A Unity walking undertaking works as a loop. First, the Start() approach of all MonoBehaviour training connected to GameObjects is executed. Then, the Update() approach is known as in every body. Note that Unity functions versions of Start () and Update() (all blanketed via way of means of UnityLinter), known as at distinctive time, e.G., Awake () is just like Start(),
+however is known as whilst a script is loaded, at the same time as the LateUpdate() techniques are known as in the end Update() techniques had been invoked.
+FixedUpdate() is invoked with a set frequency, i.E., it does now no longer rely on the body rate.
+In the script proven in Fig. 1-b, the Start() approach receives the connection with an aspect of kind Material connected to the dice. By converting one in all its properties, the dice colour is modified upon loading the scene. In every body (Update() approach), a rotation of one diploma over the z-axis is carried out to the dice. Besides rotating the
+dice, the Update() additionally dynamically instantiates some other item (a bullet) the use of the Instantiate approach. In this case, the connection with the GameObject isn't always to be had withinside the code however, rather, the item is loaded from a prefab. In Unity a prefab is a reusable asset (commonly a GameObject or a composition of GameObjects with different connected components) saved in a .Prefab file. A developer can create a prefab via way of means of without a doubt dragging a GameObject from an undertaking’s hierarchy to the undertaking resources (decrease pane).

@@ -73,3 +73,33 @@ however is known as whilst a script is loaded, at the same time as the LateUpdat
 FixedUpdate() is invoked with a set frequency, i.E., it does now no longer rely on the body rate.
 In the script proven in Fig. 1-b, the Start() approach receives the connection with an aspect of kind Material connected to the dice. By converting one in all its properties, the dice colour is modified upon loading the scene. In every body (Update() approach), a rotation of one diploma over the z-axis is carried out to the dice. Besides rotating the
 dice, the Update() additionally dynamically instantiates some other item (a bullet) the use of the Instantiate approach. In this case, the connection with the GameObject isn't always to be had withinside the code however, rather, the item is loaded from a prefab. In Unity a prefab is a reusable asset (commonly a GameObject or a composition of GameObjects with different connected components) saved in a .Prefab file. A developer can create a prefab via way of means of without a doubt dragging a GameObject from an undertaking’s hierarchy to the undertaking resources (decrease pane).
+
+# 3 ELICITATION OF RELEVANT VIDEO GAME SMELLS
+
+While it isn't always an aim of this paper to discover any viable scent that
+ought to have an effect on a Unity online game, earlier than imposing UnityLinter we carried out a small research to decide what sorts of smells to detect. To this aim, we depended on more than one reassets. Specifically we (i) mentioned our aim with specialists in online game improvement, (ii) depended on the content material of a few textbooks [38, 40], highlighting proper practices and styles in online game improvement,
+and, finally, (iii) we leveraged casual information from discussion boards, particularly the Unity Forum, a few Reddit channels associated to video video games and different Unity improvement boards. In particular, to mine ability scent-associated discussions, we done a seek on the boards the use of the subsequent keywords: (i) “proper practices”, (ii) “awful practices” and (iii) “not unusualplace mistakes”. On the Unity Forum, we analyzed discussions withinside the “support” and “community” sections. The former collects Unity legit manuals, the latter functions questions from the developers’ community. Besides discussions partially regarding viable awful practices, we discovered 29 pages (suggested in the web appendix), amongst the ones withinside the Unity Forum and Reddit, in particular concentrated on awful practices in Unity improvement. 
+Based at the numerous reassets of records, we discovered the subsequent troubles being mentioned via way of means of developers, and additionally mentioned in online game layout books:
+
+• The use of Find strategies in runtime code, and, in general,
+operations on string literals;
+
+• Instantiating and destroying sport gadgets too often;
+
+• The presence of performance-in depth obligations in Update()
+loops;
+
+• Frame price now no longer well taken under consideration whilst scripting good judgment or animation;
+
+• The use of public worldwide variables, affecting records
+hiding; and
+
+• Lack of separation of concerns, i.E., developing incohesive
+scripts with too many responsibilities.
+
+Based on such considerations, we described 6 scent types. This
+preference has been pushed via way of means of one of a kind factors: (i) want to manage with troubles which might be precise to Unity and video video games, and now no longer with time-honored issues, inclusive of loss of records hiding, that might have an effect on any software program project; (ii) functionality to outline a heuristic to detect
+the scent statically, although the detection is approximate; and (iii) thinking about smells that cowl a selection of various sorts of symptoms Unity initiatives ought to exhibit.
+
+In the subsequent, we in short describe the 6 sorts of smells we have identified. We categorize them consistent with their negative impact they'll cause, i.E., on performance, maintainability and
+behavior.

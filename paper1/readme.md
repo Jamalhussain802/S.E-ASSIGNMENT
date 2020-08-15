@@ -270,3 +270,15 @@ this odor occurs whilst the significance of a GameObject rework isn't always sca
 A easy detection should test the presence of Time.DeltaTime in
 rework operation parameters. However, the rework should additionall get different variables described as a feature Time.DeltaTime. To this aim, we leverage srcSlice to test for the presence of def-use chains among variable definitions and rework calls. If a rework name does now no longer comprise any Time.DeltaTime reference, nor (transitively) makes use of variables described on Time.DeltaTime, then we spotlight the
 odor.
+
+# 5.2 Limitations
+
+The contemporary implementation of UnityLinter suffers of a few limitations, that would be addressed in destiny paintings:
+
+(1) Limited set of smells covered: as mentioned in Section 3, in this first paintings on online game scent detection we did now no longer consider all feasible smells. This might require a scientific evaluation of literature and developers’ discussion, and may be subject of destiny paintings.
+
+(2) Lightweight and approximate detection of heavyweight methods: as mentioned above, static evaluation isn't always particularly appropriate to discover computationally-in depth methods. We mitigated this drawback looking to discover from boards what are (a few) luxurious Unity APIs, and discover their utilization in Update methods. Future paintings have to goal an accurate (dynamic) profiling of the Unity framework.
+
+(3) Very particular detection of Lack of separation of concerns: as defined above, we deal with one particular case of lack of separation of concern (blend up of enter controller and remodel withinside the equal script). Clearly, this isn't always the most effective case of interest, and in destiny, in addition instances will be handled.
+
+(4) Imprecise name graph creation and statistics waft evaluation: Doxygen isn't always a device explicitly designed for specific creation of name graphs (it's far extra a light-weight device conceived for documentation evaluation). Also, srcSlice plays a totally light-weight statistics waft evaluation. However, to the pleasant of our knowledge, those are the most effective equipment to be had to research C# source code. In general, we accept as true with a light-weight evaluation is suitable for SCATs, which have to most effective offer guidelines of candidate smells to developers.

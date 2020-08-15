@@ -1,20 +1,22 @@
 # Detecting Video Game-Specific Bad Smells in Unity Projects
 
 # Authors
-## 1 Antonio Borrelli 
 
-## 2 Vittoria Nardone
+# 1 Antonio Borrelli 
 
-## 3 Giuseppe Di Lucca 
+# 2 Vittoria Nardone
 
-## 4 Gerardo Canfora 
+# 3 Giuseppe Di Lucca 
+
+# 4 Gerardo Canfora 
 ![Author image](./image1.jpg)
 
-## 5 Massimiliano Di Penta
+# 5 Massimiliano Di Penta
 ![Author image](./image2.jpg)
 
 # [Conference]: 
 # (MSR 2020 Technical Papers)
+
 
 >Venue: Mon 29 Jun 2020 12:00 - 12:10 at MSR:Zoom - Code Smells 
 >>Chair(s): Alessandro Garcia
@@ -379,3 +381,18 @@ Our paintings seems online game improvement from a specific perspective (i.E., p
 in particular) suggests that, except conventional insects, performance troubles and to a degree maintainability troubles are particularly applicable in video video games improvement. In this scenario, an early discovery of issues thru specialised linters may be therefore beneficial.
 
 Other research have targeted on mining online game information to gather records approximately the improvement system. Lin et al. Have studied the evolution of video video games with the aid of using mining information from the Steam platform [33–35. In particular, they investigated the reviewing mechanism in video games [35], in which the quantity of performed hours is taken into consideration as an essential aspect to decide the usefulness of a review. Another mechanism for gathering comments is represented with the aid of using early-get admission to video games [34]. Finally, they studied the presence of "zero-day" updates in video video games [33] correlating them with the typical replace frequency. Work on static evaluation and mining runtime information are in large part complementary to attain an powerful and green online game improvement system.
+
+
+# 9 CONCLUSION
+
+This paper defined UnityLinter, a static analyzer able to figuring out 7 kinds of horrific smells in Unity projects. Such smells cover diverse factors of online game development, which includes overall  Update() techniques with out counting on item pools), maintainability issues (e.G., mix-up of enter coping with and GameObject transforms withinside the same script), and behavioral issues (beside the point scaling of transforms
+with appreciate to border rate).
+
+We first assessed the relevance of the smells via a survey
+with sixty eight participants. Results imply that overall performance smells are usually extra perceived than maintainability smells, and some smells consisting of Coupling items via the IDE Inspector are taken into consideration as an appropriate exercise. Then, we assessed the UnityLinter
+precision and don't forget, which, at the analyzed samples, range withinside the range [89%-100%] and [50%-100%] respectively. Finally, we reported and mentioned the diffuseness of Unity smells on one hundred open source
+video games, displaying how the studied smells exercise have an effect on a extraordinarily massive percentage of the analyzed projects, i.E., among 39% and 97%. 
+
+There are numerous instructions for destiny work, frequently focused toward enhancing approach, additionally primarily based totally at the accumulated statistics from our first evaluation. First, we plan to apply higher code analyzers or heuristics to enhance UnityLinter accuracy. Indeed, many reassets of imprecision and restricted don't forget are because of the use of light-weight information waft and speak to graph analysis.
+
+Second, we plan to hit upon a massive sort of smells, and to higher generalize a number of the already detected smells, consisting of Lack of separation of concerns, however additionally refine others consisting of Heavyweight Update techniques, for which we plan to carry out an empirical analysis of the overall performance of a wide set of Unity APIs. Finally, we plan to behavior an in-discipline evaluation, to decide the quantity to which using UnityLinter might honestly assist developers.

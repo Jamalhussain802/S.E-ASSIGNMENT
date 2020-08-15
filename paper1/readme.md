@@ -152,3 +152,21 @@ We file the effects of RQ1 through displaying the perceived relevance in shape o
 After having identified possible bad smells to detect, we wanted to investigate whether they are considered as relevant by developers, and possibly worthwhile of being addressed. Therefore, we address our first research question:
 
     RQ1: To what extent are the considered bad smells relevant for video game developers?
+
+# 4.1 Relevance Assessment Methodology
+
+To address RQ1, we behavior a survey with professionals in video game improvement. The survey consists of 5 sections:
+
+• A first phase, in which demographic statistics approximately respondents is collected. More specifically, we requested approximately: (i) the area wherein they work; (ii) their function withinside the organization (e.G., developer, assignment manager); (iii) the years of revel in in software program improvement; and (iv) greater specifically, the years of revel in in improvement with Unity.
+
+• Three sections wherein we ask builders to offer their
+perceived relevance approximately smells associated with Performance, Maintainability, and Behavior. For every smell, we offer a short description of the problem, outlining its consequencesand methods to keep away from or mitigate the smell. Then, we ask to offer a relevance rating in a 5-degree Likert scale [41]. Finally, for every query, the respondent ought to upload an optionally available open
+comment. An instance of query for the smell “Allocating
+and destroying GameObjects in updates” is said in Fig. 3.
+
+• A very last phase with questions on the general, perceived
+usefulness of a Unity linter, i.E., (i) whether or not they understand the provision of any such device useful, and (ii) whether or not they might be inclined to undertake it (note: someone ought to understand it as useful, however now no longer for her/him, only for a few classes of users, e.G., junior builders). Finally, we ask to offer free remarks approximately viable smells the respondent understand as applicable however that become now no longer taken into consideration in our study.
+
+To recruit participants, we published the questionnaire on Reddit channels associated with video video games and Unity improvement, namely gamedev and unity3d. When we published the questionnaire, we added a quick message explaining its purpose, the predicted duration (10- 15 min.) and a message telling that we might handiest use the collected records in aggregated, anonymized shape.
+
+We file the outcomes of RQ1 through displaying the perceived relevance in shape of diverging stacked bar charts. We additionally speak the open remarks made through the respondents.

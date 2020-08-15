@@ -197,3 +197,141 @@ As a result, we determined that handiest 4% of those critiques contained
 fake positives, i.E., critiques that contained refactoring operations
 that RefMiner did now no longer become aware of. The records and code for 6% of the critiques changed into noisy and impure, wherein we couldn't qualitatively become aware of whether or not a refactoring operation changed into hired or now no longer. For the opposite 31% of critiques, the builders claimed to be performing a refactoring wherein in truth different adjustments have been finished, such as overall performance improvements, for example. Hence, primarily based totally on these analyses, we investigate that our empirical look at is handiest negligibly tormented by RefMiner’s limitations. Additional information of this validation are to be had in our replication package [39].
 
+
+#  5 RESULTS AND DISCUSSION 
+
+# 5.1 Refactoring Types per Review’s Intent
+
+# Refactoring operations and intents. 
+We deal with RQ1 through studying the distribution of the wide variety of opinions that hired refactoring operations grouped through builders’ rationale and refactoring kinds. Next, we examine the maximum and least not unusualplace refactoring kinds hired, consisting of their distributions, and the way they vary in step with specific intents. Figure 2 illustrates the distribution
+of code opinions that hired refactoring operations grouped through
+the developer’s rationale.
+
+# Figure 2: Distribution of reviews that employed refactoring operations grouped by developer‘s intents and systems
+
+The parent suggests that maximum of the code adjustments that appoint
+refactoring operations gift a Feature rationale, accounting for 54.5%
+of all opinions. In 27.3% of the opinions, builders have the sole
+rationale of Refactoring. Bug Fixing seems because the 1/3 maximum not unusualplace rationale: builders refactored the device to restoration a malicious program in 11.9% of the opinions. Finally, the wide variety of opinions recognized with the rationale of Feature Removal, Platform Update and Merge Commit are negligible in evaluation to the maximum famous intents previously discussed. These consequences suggest that builders maximum commonly
+appoint refactoring operations after they do now no longer have an express rationale of refactoring, i.E., the refactoring is blended with different adjustments, usually for enforcing a brand new characteristic or solving a malicious program. These observations partially supplement preceding research concerning builders’ intents and motivations in the back of refactoring [23, 41, 46], strengthening the empirical proof on this topic.
+
+# Refactoring types and non-explicit refactoring intents.
+
+Table 4 provides the wide variety of opinions that hired refactoring operations grouped via way of means of the builders’ reason and refactoring kinds. Each mobileular represents the wide variety of opinions that hire a sure refactoring kind whilst having a sure reason. In Table four, we do now no longer take into account the wide variety of refactoring operations of the identical kind used withinside the identical assessment. Instead, we without a doubt take a look at if a assessment employs a sure refactoring kind or now no longer. 
+
+Differently from preceding studies (e.G., [29, 40, 46]), our method allows us to become aware of intents that emerge at some stage in code assessment to assist the belief of the unique reason. We talk over with those intents as blended intents, i.E., opinions that had as a minimum distinct intents, which includes Feature/Refactoring, Refactoring/Bug Fixing, and Feature/Refactoring/Bug Fixing. Hence, for the the rest of this study, we speak unmarried and blended intents separately. To keep away from misunderstandings, we talk over with the unmarried intents as Feature Only, Refactoring Only and Bug Fixing Only. Finally, we differentiate intents with an specific reason of refactoring from their non-specific counterparts, in which the primary are offered in a grey history and the latter are offered in a white history in Table 4. 
+
+Table 4 suggests that a substantial wide variety of refactoring operations are focused in opinions with the intents of Feature Only, Feature/Refactoring, Refactoring Only, and Bug Fixing Only. 
+
+Table 4 lets in us to look at that for non specific refactoring opinions, i.E, Feature Only, Bug Fixing Only, and Feature/Bug Fixing, as much as 48% and 26% of opinions hired Extract Method and Rename Method, respectively. Other refactoring kinds are much less common than approach extraction and renaming. Each of the alternative refactoring kinds happens in much less than 10% of the non-specific refactoring opinions. 
+
+In summary, we located that extracting and renaming techniques are the maximum common refactoring operations no matter the reason. This end result gives a distinct attitude at the observations made via way of means of a preceding study. Silva et al. [46] indexed eleven motives that encourage builders to use Extract Method. Most of those motivations challenge the development of the system’s inner structure. However, we located in our motivating example (see Section 3) that the motivations for extracting a way can cross past the indexed ones. In our example, the builders implemented an Extract Method refactoring to assist the implementation of a brand new feature. 
+
+# Refactoring types and explicit refactoring reviews.
+
+For the critiques with an specific rationale of refactoring, i.E., Feature/Refactoring and Refactoring Only, a much broader variety of refactoring types are hired while in comparison to their non-specific counterparts. For such critiques, Extract Method continues to be the maximum not unusualplace operation with 21% of critiques, even as Rename and Move technique are the 2d and 0.33 maximum not unusualplace operations with 16% of critiques.
+For critiques with the Feature/Refactoring rationale, builders move
+training throughout programs in handiest 5% of the critiques. Classes are greater regularly moved (12%) in critiques with a Refactoring Only rationale.
+
+A comparable statement applies for the Rename Class refactoring, that's greater hired in critiques with Refactoring Only
+rationale than Feature/Refactoring. Moreover, refactoring operations
+regarding training take place greater frequently in Refactoring Only (25%) and Feature/Refactoring (21%) critiques. As for non-specific refactoring
+intents, class-stage refactoring operations variety from 7% (Bug Fixing
+Only) to 13% (Feature Only).
+
+# 5.2 Refactoring Sequences per Review’s Intent
+
+In RQ1, we determined that builders did now no longer follow remoted refactoring operations of various types. Thus, we hypothesize that refactoring operations is probably implemented in compositions. Hence, we completed an evaluation to acquire an in-intensity information on how refactoring sequences are composed below exceptional intents.
+
+Identification of Refactoring Seqences: We accrued refactoring sequences that have been implemented for the duration of the assessment manner of a code change. We taken into consideration that a refactoring series consists of or extra interrelated refactoring operations implemented in next revisions of a code assessment. Two refactoring operations are interrelated whilst they may be implemented in a not unusualplace set of code factors (e.G. Classes). This method has been implemented in latest empirical research concerning refactoring sequences and compositions [6, 7, 47]. We analyzed the refactoring sequences for the following intents: Feature Only, Refactoring Only, Feature/Refactoring and Bug Fixing Only. We consciousness our analyses on those intents
+due to the fact they may be the maximum generally determined in our dataset (see Section five.1). Consider assessment 58223, as depicted in Section 3. The refactoring series recognized for this assessment consists of 6 refactoring operations, namely: [Extract Method, Move Method, Extract Method, Move Method, Move Attribute, Move Attribute].
+
+Table 5 affords the variety of refactoring sequences, the variety of refactoring operations that compose the sequences, the variety of opinions, and the variety of revisions for every purpose. When thinking about the 336 opinions and 3,027 revisions that gift a Feature Only purpose, we recognized 426 refactoring sequences composed of a complete of 1,621 refactoring operations.
+
+Our consequences imply that 3,437 (47.34%) out of 7,259 refactoring operations have been implemented in sequences, in which those sequences are disbursed in an average of five revisions. Besides that, builders implemented refactoring sequences on 580 (25.14%) out of 2,307 opinions. Moreover, word that a few opinions had multiple refactoring series, together with the Refactoring
+Only purpose. In this precise case, we observed that builders implemented refactoring operations in exceptional units of code factors for the duration of
+those opinions, which symbolize exceptional refactoring sequences.
+In addition, we've got determined a complete of 250 (33.55%) out of 745
+refactoring sequences in opinions in which builders had the explicit
+purpose of refactoring (Refactoring Only and Feature/Refactoring.
+
+# Table 5: Number of refactoring sequences per intent
+
+Aimed at know-how how those refactoring sequences are
+composed, we created 4 classes primarily based totally at the code element’ scope of every refactoring kind. Table 6 provides every class accompanied with the aid of using an outline and the refactoring kinds that compose the class. In addition, we gift the predominance of every class over the others while refactorings of various classes are hired in sequence. Finally, we element the wide variety of classes every class of refactoring kind affects. All those attributes will be used on this segment to offer insights on how builders compose refactoring kinds to gain their intents.
+
+# Table 6: Categories of refactoring types
+
+Combination: The class via way of means of aggregate became primarily based totally on findings of preceding research, which investigated how refactoring sorts are blended in refactoring sequences [6–8, 47]. However, those research do now no longer look at how those combos relate to builders’ intents. We categorized the refactoring sequences in line with the kinds in their refactoring operations and the order in their combos. Consider the refactoring collection for the instance mentioned in Section 3: [Extract Method, Move Method, Extract Method, Move Method, Move Attribute, Move Attribute]. This refactoring collection is classed into: magnificence, Motion,
+Intra-magnificence, Motion, Motion, Motion}. 
+
+As a end result of this class, we've discovered 41 combos of those classes in our data. When thinking about critiques with a Refactoring Only rationale, out of the a hundred and fifty refactoring sequences, 32 (21.3%) are composed of Motion handiest refactoring operations; 29 (19.3%) are composed of Motion and Intra-magnificence refactorings. These effects imply that builders have implemented a non-negligible number (40.6%) of refactoring sequences that have an effect on multiple magnificence, and that they had composed non-trivial refactoring sequences with specific refactoring sorts while having an express rationale of refactoring. Differently, while thinking about the alternative intents, we observed 212 (49.7%) and 38 (55%) Intra-magnificence handiest refactoring sequences for the Feature Only and Bug Fixing Only, respectively. These effects recommend that builders extra regularly implemented refactoring sequences on unmarried code factors while the rationale became now no longer to explicitly refactor the code.
+
+We have discovered one hundred refactoring sequences in critiques with a
+combined Feature/Refactoring rationale. Out of those, 26 are composed of
+Motion-handiest refactoring operations, and eleven are composed of refactoring operations. This suggests that builders regularly (36%) implemented refactoring sequences on multiple magnificence after they had multiple rationale. Developers regularly implemented a selected order of those classes, via way of means of first shifting instructions, subsequent enhancing instructions hierarchy, and subsequently shifting instructions to guide those intents. This shows that the order in which refactorings are hired is laid low with the specific intents builders have toward the code change. We offer the complete classes’ class in our replication package [39].
+
+# Refactoring sequences with Extract Methods or Rename Methods.
+
+On combos which have the kinds Intra-elegance or Rename, we found that 518 (69.53%) have as a minimum one Extract Method, and 94 (12.61%) have as a minimum one Rename Method. Previous paintings mentioned that Extract Method and Rename Method are the maximum not unusualplace refactoring kinds implemented while assessed in isolation [10, 46.However, our outcomes gift that those refactoring kinds are frequently implemented along side different refactoring kinds. Predominance: We described the predominance class based at the scope that every class affects. Categories that have an effect on a massive scope predominate over classes that have an effect on a small scope.
+
+Thus, the order of predominance, from the most important to the smallest
+scope, is as follows: Hierarchical, Motion, Intra-elegance, and Rename.
+As formerly shown, the assessment mentioned in Section three provides
+a refactoring collection of [Extract Method, Move Method, Extract
+Method, Move Method, Move Attribute, Move Attribute], which yields a classes’ class of {Intra-elegance, Motion, Intra-elegance, Motion, Motion, Motion}. According to Table 6, the Motion class has predominance over Intra-elegance regardless the refactorings order. Thus, this refactoring collection can be categorised surely as Motion. Table 7 provides the predominance of classes for every rationale. Consider the Feature Only rationale, for example. We take a look at that 212 refactoring sequences are categorised into predominantly Intra-elegance, which bills for 49.77% of all refactoring sequences with a Feature Only rationale. Developers frequently implemented classes that involved a massive code scope after they had the specific rationale of refactoring.We have determined that 93 (62%) out one hundred fifty refactoring sequences with Refactoring Only rationale hired code movement among classes. In addition, 10 (15%) out those hired refactoring operations on hierarchical classes, wherein those refactoring sequences have a mean of 12 refactoring operations. This suggests that builders frequently implemented refactoring on multiple elegance in sequences wherein the rationale is to explicitly enhance the structural quality.
+
+# Refactoring sequences and Feature Only intent.
+
+When thinking about the 426 refactoring sequences in critiques with a Feature Only intent, we've got determined that builders hired Motion
+and Hierarchical refactoring operations in 140 (32.86%) and 30
+(7.04%) of them, respectively.
+ 	
+# Refactoring sequences and Bug Fixing Only intent.
+
+In 25 (36.23%) out of sixty nine refactoring sequences in critiques with a Bug Fixing Only intent, builders hired code movement refactoring operations. This is a stunning observation, as one could expect that transferring code factors among training isn't a not unusualplace exercise to restore insects. Previous paintings have investigated the relationship among refactoring and malicious program fixing [4, 17]. However, those research have investigated remoted refactorings rather than sequences. Hence, our examine is the primary to look at that combos of Move Attribute, Move Method and Move Class refactorings are used for malicious program fixing. For instance, in overview 99067 [15] from jgit, builders implemented a refactoring collection composed of [Extract Method, Move Method, Move attribute] regarding training OpenSshConfig, OpenSshConfig.Host, and OpenSshConfig.State. This refactoring collection become implemented to restore an present malicious program as cautioned during overview: “This avoids some insects in Jsch’s OpenSSHConfig (...)”.
+
+Number of Classes: This category is primarily based totally at the number
+of training that every class can have an effect on in refactoring sequences.
+The classes that have an effect on a big scope frequently have an effect on greater training than classes that have an effect on a small scope. Thus, the Hierarchical and Motion classes are taken into consideration classes that have an effect on multiple training, and the Intra-magnificence and Rename are classes that have an effect on a unmarried magnificence (see Table 6). This category takes into account the order of the utility of every class. Hence, keep in mind the  instance mentioned in Section 3. A refactoring collection composed of [Extract Method, Move Method, Extract Method, Move Method,
+Move Attribute, Move Attribute], could yield a category of.
+	 
+# Non-trivial refactoring sequences and explicit refactoring reviews	
+
+Table eight gives the category of refactoring sequences concerning range of instructions. One may also word that 60% of the refactoring sequences with a Feature Only motive were labeled as. We located that each time builders have the express motive of refactoring, the sequences normally begin on a couple of instructions (54% and 57% for Refactoring Only and Feature/Refactoring, respectively). In contrast, whilst builders produce other intents, most sequences impact only unmarried instructions (60% and 59% for Feature Only and Bug Fixing Only, respectively). This range of sequences that have an effect on a couple of instructions in critiques with express refactoring intents leads us to agree with that the unmarried magnificence refactorings hired in those critiques, consisting of Extract Method and Rename Method, are frequently used to aid the refactorings that have an effect on a couple of instructions.
+
+# Interactivity, non-explicit intent and mixed-intent
+
+Curiously, builders wanted greater revisions (a mean of 6) while they
+commenced with classes that worried a couple of classes (Hierarchical
+and Motion) in refactoring sequences to guide the Feature Only
+rationale. On the opposite hand, builders additionally wanted greater revisions (a median of 5) in sequences that guide the Bug Fixing Only rationale. Besides that, the refactoring sequences with the Feature/Refactoring
+rationale are composed of a mean of seven revisions. Thus, the reviews
+which hired refactoring sequences to guide a non-explicit rationale of refactoring and/or multiple rationale require greater interactivity amongst reviewers. This interactivity lets in for discussions on a way to compose refactoring sequences to wait different intents, as provided in our motivating example (see Section 3).
+
+# 5.3 Refactoring Evolution Across Reviews
+
+We cope with RQ3 via way of means of providing a brand new class to represent refactoring evolution styles at some stage in code assessment. We are the primary to look into this phenomenon; hence, we observed a coarse-grained approach whilst reporting those observations as a first-time visualization of this data. Thus, our class serves as a baseline for destiny studies. This class includes acting a sequential commentary of the refactoring operations hired throughout all revisions withinside the code assessment. Consider a code assessment with three revisions, for instance. We sequentially in comparison the refactoring operations achieved withinside the 2nd revision to the refactoring operations achieved withinside the first revision. Next, we in comparison the refactoring operations withinside the 0.33 revision to those withinside the 2nd revision. This method enabled us to have a look at 5 possible refactoring evolution styles.
+
+We describe every sample as follows: 
+
+(i) single, whilst a assessment
+has most effective a unmarried revision and at the least one refactoring operation; 
+
+(ii) new, whilst at the least one refactoring became created in a next revision and this refactoring has now no longer been undone in destiny revisions of the equal assessment; 
+
+(iii) undone, whilst at the least one refactoring eration became undone in a next revision of the equal assessment, and no new operations have been identified; 
+
+(iv) both, whilst each new and undone refactoring operations are identified, no matter the order; and 
+
+(v) same, whilst precisely the equal set of refactoring operations
+is found in all revisions of a assessment. These styles are mutually
+different and incorporate all code modifications in our dataset. Consider
+our motivating instance depicted in Section 3. No refactoring operations have been hired withinside the first revision. In the second one revision, an Extract Method refactoring became achieved, which characterizes a new refactoring operation on this assessment’s lifecycle. However, in revision 13, this Extracted Method became undone, and different refactoring operations have been hired instead. Hence, this assessment is considered to have a both refactoring evolution sample.
+
+# Intents and refactoring evolution patterns.
+
+Figure 3 shows the distribution of evaluations grouped with the aid of using the intents and refactoring evolution styles. We discovered that the evolution of refactoring operations in evaluations with the Feature Only and Feature/Refactoring intents have  a tendency to observe extra complicated evolution styles than evaluations with the express rationale of Refactoring Only. While almost 50% of evaluations with the Feature/Refactoring rationale have refactoring operations added, undone or each alongside the revisions, most effective around 25% of the evaluations with the Feature Only rationale have refactoring operations added, undone or each alongside the revisions. Differently, evaluations with the express rationale of Refactoring Only have a tendency to in large part continue to be the identical at some stage in reviewing, with most effective 23% of the evaluations supplying any extrade withinside the refactoring operations. 
+
+These outcomes imply that evaluations with a refactoring rationale
+have a tendency to observe a ‘one and done’ behavior, in which maximum of them are incorporated as quickly as they may be proposed. On the opposite hand, featurerelated evaluations have a tendency to be iterative, in which diversifications of the code extrade are normally discovered. We additionally discovered that evaluations with a Bug Fixing Only rationale have a tendency to act further to featurerelated ones. However, evaluations with a unmarried revision seem to be extra common on Bug Fixing Only evaluations in evaluation to Feature Only and Feature Refactoring evaluations.

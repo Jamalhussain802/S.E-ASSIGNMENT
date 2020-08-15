@@ -147,4 +147,8 @@ statistics in aggregated, anonymized shape.
 
 We file the effects of RQ1 through displaying the perceived relevance in shape of diverging stacked bar charts. We additionally speak the open feedback made through the respondents.
 
+# 4 SMELL RELEVANCE ASSESSMENT
 
+After having identified possible bad smells to detect, we wanted to investigate whether they are considered as relevant by developers, and possibly worthwhile of being addressed. Therefore, we address our first research question:
+
+    RQ1: To what extent are the considered bad smells relevant for video game developers?

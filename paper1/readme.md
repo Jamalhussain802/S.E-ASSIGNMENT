@@ -181,4 +181,8 @@ Respondents commonly agree (79% of fine solutions) approximately the usefulness 
 implementation calls for it. In different words, an occasional allocation/spoil is acceptable, while a huge allocation/destructionof items makes the item pool worthwhile. Also, pool length and allocation frequency create a trade-off among the use of the pool or now no longer, due to the fact a massive pool would possibly bring about a waste of allotted memory. Finally, one respondent noted how the greater latest C#
 runtime makes rubbish collection (activated upon Destroy) greater green than before.
 
+# Heavyweight Update methods.
+In this case, 82% of the respondents agree approximately the scent. At the identical time, in addition they suggest that(i) as expected, a right evaluation of this scent calls for a run-time profiler, (ii) Unity handles lengthy name stacks quite well, (iii) nested loops can be an amazing indicator of ability problems, however best whilst the extent of nesting is over three-4. Finally, respondents endorse the use of coroutines (a Unity mechanism for multi-threaded execution) to
+alleviate this problem.
+
 

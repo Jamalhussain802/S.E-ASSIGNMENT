@@ -1,5 +1,7 @@
 # How Graduate Computing Students Search When Using an Unfamiliar Programming Language
 
+
+
 # Authors:
 
 # Gina Bai, 
@@ -269,3 +271,9 @@ End-person programming is described as “programming to acquire theend result o
 According to Scaffidi, et al., over forty five million cease customers said that they “used spreadsheets or databases” in offices in 2001 [40]; however, most effective 20% of those employees indicated that they also “do programming.” However, 44% of spreadsheets contained formulas, presenting proof of programming in spreadsheets [13].
 
 Various research were carried out on spreadsheets, consisting of testing [38], code smells in formulas [12, 17, 22] and equipment for spreadsheet method transformation [16]. However, none take a look at how end users learn how to application in spreadsheets, what demanding situations they come upon at some point of programming, and the way they technique solutions. Our work, whilst now no longer especially focused on cease-customers, presents some insights demanding situations encountered while gaining knowledge of VBA automation.
+
+# 6 CONCLUSION AND FUTURE WORK
+
+We studied how graduate college students seek whilst fixing programming duties in a brand new language. We locate that next programming language beginners seek with the functions of exploring for instance code, designing new functions and know-how why code plays because it does. Learners composed extra verbose queries, and required longer time to experiment via the hunt end result than expert builders did [39]. Consulting colleagues/buddies in person should enhance the risk to resolve a problem. Consulting documentation and tutorials is extra indicative of fulfillment in a seek than consulting Q&A sites. Queries that concentrate on how something works are much more likely to be successful whilst being composed with the structure, “How to do... ”. Learns regularly borrowed phrases from languages with which they're acquainted whilst attempting to find examples in an surprising language. The time period borrowing queries have been much more likely to fulfillment than the everyday question on average.
+
+For destiny paintings, a replication look at with a extra various and large set of next programming language beginners is recommended to higher generalize how beginners seek. Techniques that can decide the relative APIs/libraries primarily based totally at the context in the queries, offer question reformulation pointers according to the hunt goals, map APIs among programming language sand gift pattern code are cautioned to aid extra programming languages. Another inspiration for destiny paintings is to explore the way to stumble on and accurate the time period mismatch in queries for the duration of the language migration.

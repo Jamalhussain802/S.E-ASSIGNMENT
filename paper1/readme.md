@@ -146,3 +146,5 @@ To recruit participants, we published the questionnaire on Reddit channels assoc
 statistics in aggregated, anonymized shape.
 
 We file the effects of RQ1 through displaying the perceived relevance in shape of diverging stacked bar charts. We additionally speak the open feedback made through the respondents.
+
+

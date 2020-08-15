@@ -293,3 +293,22 @@ Finally, in the limits of UnityLinter’s accuracy, we want to
 inspect whether or not the taken into consideration smells are truely gift in present games. This is due to the fact if a scent is extraordinarily rare (i.E., it not often happens) then it could now no longer be profitable to make investments effort on growing procedures for managing it. At the equal time, also a scent being extraordinarily common may pose questions, i.E., the taken into consideration symptom is a widely-followed improvement practice, and consequently in one of these condition the scent detector might produce an immoderate wide variety of warnings. Our 1/3 studies query is:
 
     RQ3: What is the diffuseness of the considered bad smells?
+
+
+# 6.1 Study Methodology
+
+We observe UnityLinter on a fixed of initiatives, to (i) validate its accuracy, and (ii) look at the significance of the investigated smells. To this purpose, we taken into consideration a hundred Unity recreation initiatives. We have downloaded them from GitHub selecting handiest the initiatives which have the sentence “Game in Unity” of their description. We have selected the primary a hundred biggest ones (thinking about the general repository size).
+
+To address RQ2, we carry out a guide assessment of the detected
+smells. As for the precision, we extracted a stratified random pattern of 359 smells most of the 5,461 detected one, in which strata are computed primarily based totally at the proportions of various scent types. This pattern guarantees a ±5% margin of blunders with a self assurance degree of 95%. Since one scent (Getting a GameObject reference locating it through name) has a reasonably confined quantity of times (61), for this reason accomplishin some of 420 smells to be manually analyzed in total.
+
+The evaluation has been accomplished through authors, knowledgeable of Unity, that have been now no longer worried withinside the improvement of UnityLinter (to keep away from bias). During a primary phase, a fixed of 20 scent times (of extraordinary types) have been collectively coded, after which they finished the challenge independently, with an settlement of 0.ninety four and a Cohen’s okay inter-rater settlement [20] of 0.45, that's a mild settlement (be aware that such an settlement isn't in particular excessive due to the fact if thevery excessive percentage, 92% of instances in which each raters agreed with a proper tremendous case). Finally, They mentioned and resolved inconsistent
+assessments.
+
+Assessing the consider on all a hundred initiatives changed into now no longer feasible. Instead,the 2 assessors manually inspected 5 entire initiatives (randomly selected most of the a hundred) to become aware of viable smells, accomplishing a mild Cohen’s okay inter-rater settlement (0.48). Finally, they resolved inconsistent evaluations, and in comparison their results with the ones of UnityLinter. The analyzed GitHub repositories are:
+
+ArtemSobolevPI-53/3D-Racing-Game-in-Unity, pchen4South/unityjam, smcguire56/GestureBasedUIProject, zanval/MiniLD62, and B-en-j-a-m-i-n-S-a-v-a-g-e_Simple-VR-Game-in-Unity.
+
+As final results of the validation, we report, for every scent type, the completed precision and consider. Also, we talk the motives for false positives and negatives.
+
+To address RQ3 we report, for every scent type: (i) the quantity of detected times throughout all of the studied initiatives, (ii) the share of affected initiatives and (iii) the share of affected supply code files. We additionally talk a few exemplar instances of detected smells.

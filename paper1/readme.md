@@ -192,4 +192,8 @@ alleviate this problem.
 Almost all respondents (91%) suggest that the usage of Find is a bad practice. Besides performance-associated effects, Find additionally makes the supply code fragile in case someone renames items. One respondent indicated that the usage of Find can nonetheless be an amazing practice whilst retrieving a reference in an item hierarchy (for example, retrieving the connection with the top in a humanoid version from the upper-degree box item). Respondents advocated creating
 coupling thru the inspector, instead.
 
+# Lack of separation of concerns. 
+
+Respondents commonly agree (66%) approximately the usefulness of setting apart concerns. However, thereis a vast percentage (24%) of impartial responses, in which respondents additionally said “It depends”, bringing up that an immoderate fragmentation of obligations in more than one MonoBehaviour scripts can also additionally bring about a waste of effort, code greater hard to be understood,and, above all, it is able to negatively have an effect on performances.
+
 

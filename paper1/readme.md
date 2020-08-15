@@ -312,3 +312,20 @@ ArtemSobolevPI-53/3D-Racing-Game-in-Unity, pchen4South/unityjam, smcguire56/Gest
 As final results of the validation, we report, for every scent type, the completed precision and consider. Also, we talk the motives for false positives and negatives.
 
 To address RQ3 we report, for every scent type: (i) the quantity of detected times throughout all of the studied initiatives, (ii) the share of affected initiatives and (iii) the share of affected supply code files. We additionally talk a few exemplar instances of detected smells.
+
+
+# 6.3 RQ3 results: Smells’ diffuseness
+
+Table 4 reviews the diffuseness of the studied odor sorts throughout the one hundred analyzed initiatives. Clearly, this statistics ought to be interpreted keeping into consideration the precision and do not forget of UnityLinter, mentioned in RQ2.
+
+As the desk shows, the most important range of odor instances (and the most important percentage of affected initiatives) arise for Coupling gadgets via the IDE Inspector: 97% of the analyzed initiatives are laid low with this odor. This is unsurprising, primarily based totally at the consequences of RQ1. Indeed, many builders recall this practice, i.E., growing coupling via the inspector, as a useful (and in popular harmless) improvement practice. 
+
+86% of the analyzed initiatives are laid low with Heavyweight Update methods. Truly, as we defined in Section 5, a linter like UnityLinter (however the equal may be stated of different equipment including FindBugs [5] or Android Lint [2]) ought to handiest spotlight capacity issues in such instances. Only a dynamic evaluation and profiling may also monitor whether or not or now no longer those constitute real instances of overall performance issues. 
+
+About Lack of separation of concerns, regardless of UnityLinter has a reasonably restrained do not forget, we nevertheless determined 366 instances (and 66% of the initiatives) wherein builders blend up direct get admission to to enter controllers with different operations including get admission to to transforms. Fortunately, Unity has these days launched a brand new enter control mechanism [9] which could assist to make the supply code cleaner. 
+
+The least common smell is Getting a GameObject reference locating it via way of means of name: it influences 39% of the analyzed initiatives. On the only hand, as in line with RQ1 consequences, this odor is understood and well-perceived via way of means of builders. At the equal time, the excessive utilization of coupling via the Inspector reduces the usage of Find operations. Other smells with a surprisingly low notion are Allocating and destroying GameObjects in updates (51% of the analyzed initiatives affected). As additionally indicated in remarks acquired withinside the RQ1 survey, whilst gadgets want to be created and launched with a excessive frequency, builders use an item pool. As in line with Animation pace relies upon at the body rate (57% of initiatives affected) builders well scale transforms the usage of Time.DeltaTime, or use FixedUpdate(). 
+
+Finally, only 66% of the initiatives are laid low with A MonoBehaviour magnificence consists of empty methods. As formerly defined, this odor takes place whilst builders do now no longer delete     empty approach templates robotically generated via way of means of the IDE.
+
+    RQ3 Summary: The studied smell types affect a proportion of projects ranging between 39% and 97%. While Coupling objects through the IDE Inspector is highly diffused (but also considered as an acceptable development practice), smells such as Getting a GameObject reference finding it by name, Allocating and destroying GameObjects in updates, and Animation speed depends on the frame rate are more acknowledged by developers and also occur in fewer projects.

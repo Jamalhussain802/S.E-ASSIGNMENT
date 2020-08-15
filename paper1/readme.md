@@ -228,3 +228,45 @@ While recommendations (1) and (2) are out of scope for thiwork, we accompanied u
 
 In this section we describe UnityLinter, a static analysis tool able to recognize 7 Unity smells, i.e., the 6 described in Section 3, plus the A MonoBehaviour class contains empty methods. UnityLinter has been developed as Python scripts, which takes as input a Unity project and, before detecting smells, extracts three pieces of information: (1) A parse tree of C# files using the srcML tool [21]. (2) A call graph using Doxygen [30]. Doxygen generates documentation starting from the source code. For this purpose, it is able to extract call graphs, inheritance diagrams, and collaboration diagrams. (3) Data flow information using srcSlice [13, 39]. After having extracted the parse tree, call graph, and data flow, we leverage them to identify the smells, using the rules described in the following.
 
+# 5.1 Detection Rules
+
+This phase ambitions to element the detection policies described for every odor.
+
+# Allocating and destroying GameObjects in updates.: 
+
+to detect this odor UnityLinter leverages the decision graph extracted via way of means of Doxygen.Basically, we look for the presence of Instantiate and Destroy invocations both in Update() strategies, or in strategies transitively known as via way of means of Update(), in step with the Doxygen name graph.
+
+# Getting a GameObject reference finding it by name: 
+
+the detection of this odor is tremendously straight-ahead and comparable to the preceding one, in that we search for the presence of Find-associated invocations in Update() strategies, or in strategies accessible from Update(). Based additionally at the comments we acquired withinside the survey of Section 4, the invocations we healthy are Find, FindWithTag, FindGameObjectWithTag, and GetComponent.
+
+# Coupling items through the IDE Inspector: 
+
+we examine parse bushes produced via way of means of srcML, figuring out the presence of public or [SerializeField] fields of kind GameObjects or different nonprimitive types. These constitute fields wherein the developer normally drags GameObjects to create static couplings. We discard primitive kind fields due to the fact those are normally used to set constants and different houses via the Unity Inspector. Then, to test whether or not a script is, certainly related to a scene (i.E., in any of its GameObjects), UnityLinter retrieves its identifier (guid) in its metadata record generated via way of means of Unity. Then, it tests whether or not the guidis in any scene metadata.
+
+
+# Heavyweight Update methods: 
+
+statically-figuring out computationally-in depth strategies is especially challenging, as this challenge is regularly done via a profiler (Unity affords a pretty thorough profiling infrastructure). Nevertheless, it could be beneficial to early warn builders at the same time as writing source
+code. To this aim, we search for signs of capability heavyweightUpdate() strategies. More specifically, we search for 3 different varieties of signs: (i) a excessive diploma of nesting in loops; (ii) an immoderate quantity of technique calls; and (iii) the presence of Unity API invocations recognised to be especially high priced.
+
+For the primary cases, a threshold ought to be set. While a developer should pick herself a way to calibrate such thresholds, the technique we comply with to set thresholds in our analyses (and withinside the studypronounced in Section 6) is to take into account as heavyweight all Update() strategies having loop stage of nesting or quantity of technique calls
+exceeding the 0.33 quartile of all Update() strategies withinside the project. In the absence of ancient facts, one should set those thresholds primarily based totally on preceding enjoy or facts from different projects.
+For the 0.33 case, we take into account high priced APIs documented in Unity-associated forums [6]. In the cutting-edge implementation, the taken into consideration APIs are associated with the Camera.fundamental access, and tomessaging, i.E.,SendMessage and BroadcastMessage.
+
+# A MonoBehaviour class contains empty methods:
+
+we enforce this odor via way of means of surely checking for the presence of empty Start() and Update() strategies in MonoBehaviour classes.
+
+# Lack of separation of concerns: 
+
+this odor can be associated with numerous components of software program improvement and, in our context, of Unity improvement. While one opportunity might have been to leverage conventional methods aimed toward computing loss of brotherly love (for example, via way of means of computing the conceptual brotherly love metric [36]), we observed that this will now no longer paintings nicely in our case. For example, a technique should comprise an invocation to an item rework and any other one converting the item kingdom or gaining access to a controller.
+Therefore, we opted for enforcing a totally precise case of detector capable of pick out MonoBehaviour scripts containing each access to GameObject.rework and to the Input elegance, 
+i.E the only chargeable for dealing with enter controllers.
+
+# Animation speed depends on the frame rate:
+
+this odor occurs whilst the significance of a GameObject rework isn't always scaled using Time.DeltaTime, i.E., whilst it does now no longer account for the body rate.
+A easy detection should test the presence of Time.DeltaTime in
+rework operation parameters. However, the rework should additionall get different variables described as a feature Time.DeltaTime. To this aim, we leverage srcSlice to test for the presence of def-use chains among variable definitions and rework calls. If a rework name does now no longer comprise any Time.DeltaTime reference, nor (transitively) makes use of variables described on Time.DeltaTime, then we spotlight the
+odor.

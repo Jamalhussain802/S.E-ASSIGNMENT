@@ -342,3 +342,7 @@ findings. First, the set of detected smells is in reality incomplete. A unique t
 Second, a few smells (e.G., Lack of separation of concerns) have been described for terribly unique instances and may be prolonged in destiny work.
 Finally, our take a look at worried the evaluation of open supply games. It is of paramount significance to increase the take a look at to in addition video
 games (along with business ones) that may be extra representative of the market.
+
+# 8 RELATED WORK 
+
+This section discusses related work about (i) design principles in video games, and (ii) empirical studies on video game development.

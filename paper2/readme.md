@@ -56,3 +56,12 @@ To our understanding, we're the primary to look at how next language freshmen [6
 
 This paper describes the context and strategies we used to collect the surveys and logs for this look at in Section 2. Section three provides the distinct look at results. Implications of the findings are suggest edin Section 4.2 and the capability threats to validity are mentioned in phase 4.4. Finally, Section 6 provides a few concluding remarks and indicates adjustments on destiny paintings
 
+# 2 STUDY
+
+We frame this study around the following three research questions: 
+      
+    RQ1: Why do subsequent language learners search? 
+    
+    RQ2: What does a typical search session entail for a subsequent language learner?
+ 
+    RQ3: What are the factors that impact the success of search queries for subsequent language learners?

@@ -138,3 +138,62 @@ of the code evaluation system can also additionally lead builders to alternate t
 capabilities whilst that is the only purpose of a code alternate. Next, the remarks supplied through different builders all through the reviewing system
 brought about converting the unique purpose for the code alternate. As a end result, formerly accomplished refactoring operations had been undone and new
 refactorings had been accomplished to mirror the brand new intents
+
+
+# 4 STUDY SETTINGS
+
+# 4.1 Research Questions
+
+# RQ1: What are common refactoring types employed under each specific intent? –
+
+RQ1 goals at investigating the refactoring sorts hired while builders have exceptional intents for a code changebelow review, e.G., function including and malicious program fixing. We degree the maximum and least not unusualplace refactoring sorts hired, their distributions, and the way they range consistent with exceptional intents. By answering RQ1, we're capin a position to show new observations at the refactoring sorts hired below exceptional intents. This is beneficial for researchers while devising refactoring strategies that account for the builders’ intents. Moreover, through studying the builders intents, we depict how refactorings are hired to aid the
+author’s unique rationale and intents that emerge at some stage in code review,which has now no longer but been mentioned withinside the literature.
+
+# RQ2: How do developers compose refactoring sequences to support their intents? –
+
+RQ2 pursuits at complementing the knowledge acquired withinside the preceding query with the aid of using investigating how builders compose refactoring sequences, i.E., refactoring operations applied in conjunction, to help their intents. By answering RQ2, we screen new observations approximately how builders compose refactoring sequences to help their intents all through code review. We also spotlight the maximum not unusualplace compositions of refactoring sequences while builders have the express motive of refactoring or not.
+
+# RQ3: How do code changes that employ refactoring operations evolve during code review? –
+
+RQ3 targets at investigating how refactoring operations evolve at some point of the manner of code review. By answering this question, we're capin a position to show 5 exclusive refactoring evolution patterns, supplying new insights at the refactoring practices hired at some point of the reviewing manner. Previous studies [4, 6, 10, 46] simplest investigate refactoring utility a posteriori, wherein one can't have a look at such evolution patterns. By studying refactoring operations even as they're carried out in code review, we are capable of pass ahead the empirical understanding on refactoring practices.
+
+# 4.2 Study Steps and Procedures 
+
+# Step 1: Select software systems that adopt modern code review
+
+We decided on structures supplied through the Code Review Open
+Platform (CROP) [35], an open-supply dataset that hyperlinks code evaluate facts with their respective code adjustments. CROP presently offers facts for eleven structures, accounting for a complete of 50,959 code opinions and 144,906 revisions extracted from big open supply communities: Eclipse and Couchbase. All structures in CROP appoint Gerrit [20] as their code evaluate tool. Hence, through the use of CROP, we've get entry to to a wealthy dataset of supply code adjustments that goes past different platforms, consisting of Github. The CROP facts include now no longer handiest the supply code extrade in itself, however additionally all of the feedback and remarks all through evaluate, the extrade’s description evolution, hyperlinks to the problem monitoring gadget and so on. We decided on handiest Java structures protected withinside the CROP dataset because of obstacles of the RefMiner tool [53] (See Step 2). Table 1 offers information about each decided on gadget, wherein the Eclipse and Couchbase structures are provided withinside the top and backside halfs of the table, respectively. We additionally element the wide variety of merged opinions and revisions in each gadget observed through the time-span of our investigation. Finally, we document the median, most and minimal values of kLOC.
+
+# Step 2: Identify refactoring operations during code review
+
+We used the RefMiner device [52] to pick out refactoring operations in keeping with thirteen refactoring sorts which might be usually hired through developers [46]. We have recognized refactoring operations through thinking about every revision of a code change, wherein every revision changed into as compared to its parent, i.E., the codebase’s model earlier than any revision (which include the preceding ones) changed into applied. For info concerning this procedure, we advise a latest empirical study we executed committed to this topic [38]. In research executed through RefMiner’s authors, the device is stated to reap 98% of precision and 93% of recall [46, 52], which makes it the contemporary state-of-the-art device for computerized refactoring detection. RefMiner has been continuously evolved and evolved, wherein the today's strong launch dates from May, 2018. However, its today's model has now no longer been hired in latest research. On the alternative hand, its in advance releases have been used and evaluated in research through researchers apart from the equipment’ authors [10, 17, 29], accomplishing comparable rankings of precision and recall as in its authentic proposed paper. Hence, we selected to appoint an in advance model of RefMiner (model 0.2.0) [52] because of its effects in research executed through each the equipment authors and different researchers.
+
+Table 2 lists the thirteen refactoring sorts recognized through RefMiner. We recognized refactoring sorts that have an effect on special scopes of a code element: 4 sorts that have an effect on a category or interface; six sorts that have an effect on methods; and 3 sorts that have an effect on an attribute. 
+
+We recognized 1,780 code adjustments that hired refactoring operations for a complete of 7,259 refactoring operations executed when thinking about all decided on systems. We additionally located that the share of evaluations that carry out refactoring operations is consistent at some stage in all analyzed systems (from 11% to 14% of evaluations). 
+
+Moreover, maximum of the evaluations have or extra refactoring operations, frequently attaining four or extra. Consider the code overview example mentioned in Section 3, for example. All refactoring operations depicted in Figure 1 had been mechanically identifed through RefMiner. The
+entire set of refactoring operations recognized for all revisions in
+our dataset is to be had in our replication package [39].
+
+# Step 3: Manually inspect and classify the developers’ intents behind code review discussions.
+
+We taken into consideration all 1,780 critiques that hired refactoring operations to carry out a guide inspection and category of the developers’ intents based at the overview’s description and reviewers’ remarks via comments. 
+
+We finished our guide category through adopting a stateof-the-artwork manner to categorise the developers’ reason in a code alternate [36, 37]. As a part of the manner, we taken into consideration all of the facts worried in a code overview, inclusive of devote messages, discussions among developers, hyperlinks to trouble monitoring systems, and supply code. In this paper, we don't forget the reason of a code alternate to be the dreams and motivations of the alternate’s author(s). Table three lists the developers’ intents we recognized in our study. We offer a description of every reason accompanied through an excerpt from the critiques’ dialogue to function instance of our category procedure.
+
+The guide category procedure consisted of authors studying the facts of every code alternate and figuring out the developers’ reason. We hired a -segment procedure: 1) authors solely and one at a time inspected and labeled all critiques; 2) the authors mentioned all of the code modifications for which there has been a war of words withinside the category. During the category procedure, we recognized critiques with combined intents, i.E, critiques with a couple of reason,inclusive of Feature/Refactoring, and Feature/Refactoring/Bug Fixing. We emphasize there has been no war of words on any code alternate after the 2d level of category. Consider the code overview mentioned in
+Section three. Based at the overview’s facts, as defined above, we recognized a Feature/Refactoring reason for this overview. The set of manually labeled code critiques that hired refactoring operations are
+to be had in our replication package [39].
+
+# Step 4: Validation of code reviews that present a refactoring intent
+
+Due to RefMiner’s limitations, there is probably code critiques wherein the builders gift a refactoring cause but no refactoring operation is identified. This might bias our look at with the aid of using investigating handiest the code critiques wherein RefMiner is capable of figuring out a refactoring operation, and probably lacking on different critiques with a refactoring cause. To investigate this danger to our look at’s validity, we employ the code critiques’ category finished with the aid of using our preceding work [37]. In this look at, we classified code critiques consistent with their architectural impact. Hence, we can hire this category as a partial floor fact for code critiques that gift a refactoring cause irrespective of the presence
+or absence of refactoring operations. Thus, for every assessment formerly reported [37] as having a refactoring cause (332 critiques), we used RefMiner to become aware of the refactoring operations that might had been hired. When thinking about all structures studied in the preceding work, we determined that 196 (59%) of the critiques with a refactoring cause hired at the least one refactoring operation.
+
+Regarding the 136 (41%) ultimate critiques, we finished a qualitative evaluation to analyze the motives RefMiner changed into now no longer capin a position to become aware of refactoring operations.
+
+As a result, we determined that handiest 4% of those critiques contained
+fake positives, i.E., critiques that contained refactoring operations
+that RefMiner did now no longer become aware of. The records and code for 6% of the critiques changed into noisy and impure, wherein we couldn't qualitatively become aware of whether or not a refactoring operation changed into hired or now no longer. For the opposite 31% of critiques, the builders claimed to be performing a refactoring wherein in truth different adjustments have been finished, such as overall performance improvements, for example. Hence, primarily based totally on these analyses, we investigate that our empirical look at is handiest negligibly tormented by RefMiner’s limitations. Additional information of this validation are to be had in our replication package [39].
+

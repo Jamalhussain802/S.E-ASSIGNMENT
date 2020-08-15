@@ -65,3 +65,9 @@ We frame this study around the following three research questions:
     RQ2: What does a typical search session entail for a subsequent language learner?
  
     RQ3: What are the factors that impact the success of search queries for subsequent language learners?
+
+# 2.1 Study Design
+
+Using a aggregate of surveys and logs, Sadowski, et al. [39] explored the quest conduct of Google developers; it's far from this look at that we derive our methodology. Table 1 summarizes the similarities and variations of the context and accumulated information between the preceding look at and this look at. To goal next language learners, we run our look at in a lab surroundings with graduate students. Participants had been given duties withinside the strange languages. Due to the experimental context, we had been capable of acquire more survey responses in line with question compared to the preceding look at, supplying a better density of auxiliary statistics in line with question.
+
+One of the shortcomings of the authentic look at is that there became no perception of seek achievement with inside the logs or the queries. That is, It became now no longer clean from the information whilst a seek consultation became successful or unsuccessful. To deal with that shortcoming, on this look at, we ask explicitly approximately seek achievement in surveys, one deployed whilst a tab is closed (Figure 4) and any other deployed whilst it's far suspected aquestion is reformulated (Figure 3). Another shortcoming is the use of edit distance to locate reformulation, which might not constitute real reformulation; we deal with this via way of means of asking contributors whethertheir contemporary question is meant to remedy the equal trouble as the preceding question in a reformulation survey (Figure 3).

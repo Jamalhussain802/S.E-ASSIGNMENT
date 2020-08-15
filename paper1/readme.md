@@ -295,7 +295,7 @@ inspect whether or not the taken into consideration smells are truely gift in pr
     RQ3: What is the diffuseness of the considered bad smells?
 
 
-# 6.1 Study Methodology
+# 6.1  Study Methodology
 
 We observe UnityLinter on a fixed of initiatives, to (i) validate its accuracy, and (ii) look at the significance of the investigated smells. To this purpose, we taken into consideration a hundred Unity recreation initiatives. We have downloaded them from GitHub selecting handiest the initiatives which have the sentence “Game in Unity” of their description. We have selected the primary a hundred biggest ones (thinking about the general repository size).
 

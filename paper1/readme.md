@@ -192,9 +192,6 @@ alleviate this problem.
 Almost all respondents (91%) suggest that the usage of Find is a bad practice. Besides performance-associated effects, Find additionally makes the supply code fragile in case someone renames items. One respondent indicated that the usage of Find can nonetheless be an amazing practice whilst retrieving a reference in an item hierarchy (for example, retrieving the connection with the top in a humanoid version from the upper-degree box item). Respondents advocated creating
 coupling thru the inspector, instead.
 
-# A MonoBehaviour class contains empty methods: 
-
-we enforce this odor via way of means of surely checking for the presence of empty Start() and Update() strategies in MonoBehaviour classes.
 
 # Lack of separation of concerns. 
 
@@ -231,14 +228,3 @@ While recommendations (1) and (2) are out of scope for thiwork, we accompanied u
 
 In this section we describe UnityLinter, a static analysis tool able to recognize 7 Unity smells, i.e., the 6 described in Section 3, plus the A MonoBehaviour class contains empty methods. UnityLinter has been developed as Python scripts, which takes as input a Unity project and, before detecting smells, extracts three pieces of information: (1) A parse tree of C# files using the srcML tool [21]. (2) A call graph using Doxygen [30]. Doxygen generates documentation starting from the source code. For this purpose, it is able to extract call graphs, inheritance diagrams, and collaboration diagrams. (3) Data flow information using srcSlice [13, 39]. After having extracted the parse tree, call graph, and data flow, we leverage them to identify the smells, using the rules described in the following.
 
-# 5.2 Limitations
-
-The contemporary implementation of UnityLinter suffers of a few limitations, that would be addressed in destiny paintings:
-
-(1) Limited set of smells covered: as mentioned in Section 3, in this first paintings on online game scent detection we did now no longer consider all feasible smells. This might require a scientific evaluation of literature and developers’ discussion, and may be subject of destiny paintings.
-
-(2) Lightweight and approximate detection of heavyweight methods: as mentioned above, static evaluation isn't always particularly appropriate to discover computationally-in depth methods. We mitigated this drawback looking to discover from boards what are (a few) luxurious Unity APIs, and discover their utilization in Update methods. Future paintings have to goal an accurate (dynamic) profiling of the Unity framework.
-
-(3) Very particular detection of Lack of separation of concerns: as defined above, we deal with one particular case of lack of separation of concern (blend up of enter controller and remodel withinside the equal script). Clearly, this isn't always the most effective case of interest, and in destiny, in addition instances will be handled.
-
-(4) Imprecise name graph creation and statistics waft evaluation: Doxygen isn't always a device explicitly designed for specific creation of name graphs (it's far extra a light-weight device conceived for documentation evaluation). Also, srcSlice plays a totally light-weight statistics waft evaluation. However, to the pleasant of our knowledge, those are the most effective equipment to be had to research C# source code. In general, we accept as true with a light-weight evaluation is suitable for SCATs, which have to most effective offer guidelines of candidate smells to developers.

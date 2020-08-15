@@ -282,3 +282,14 @@ The contemporary implementation of UnityLinter suffers of a few limitations, tha
 (3) Very particular detection of Lack of separation of concerns: as defined above, we deal with one particular case of lack of separation of concern (blend up of enter controller and remodel withinside the equal script). Clearly, this isn't always the most effective case of interest, and in destiny, in addition instances will be handled.
 
 (4) Imprecise name graph creation and statistics waft evaluation: Doxygen isn't always a device explicitly designed for specific creation of name graphs (it's far extra a light-weight device conceived for documentation evaluation). Also, srcSlice plays a totally light-weight statistics waft evaluation. However, to the pleasant of our knowledge, those are the most effective equipment to be had to research C# source code. In general, we accept as true with a light-weight evaluation is suitable for SCATs, which have to most effective offer guidelines of candidate smells to developers.
+
+# 6 STUDY ON UNITYLINTER ACCURACY AND SMELL DIFFUSENESS
+
+After having collected feedback from potential users of UnityLinter, and having benefited from such feedback to refine the detector, we need to evaluate its accuracy. While it might be acceptable for a linter to perform a lightweight, somewhat imprecise analysis, having too many false negatives or false positives would result in a tool useless for developers. Therefore, we ask our second research question:
+
+    RQ2: How accurate is UnityLinter in detecting the considered bad smells?
+
+Finally, in the limits of UnityLinter’s accuracy, we want to
+inspect whether or not the taken into consideration smells are truely gift in present games. This is due to the fact if a scent is extraordinarily rare (i.E., it not often happens) then it could now no longer be profitable to make investments effort on growing procedures for managing it. At the equal time, also a scent being extraordinarily common may pose questions, i.E., the taken into consideration symptom is a widely-followed improvement practice, and consequently in one of these condition the scent detector might produce an immoderate wide variety of warnings. Our 1/3 studies query is:
+
+    RQ3: What is the diffuseness of the considered bad smells?

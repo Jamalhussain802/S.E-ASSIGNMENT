@@ -329,3 +329,16 @@ The least common smell is Getting a GameObject reference locating it via way of 
 Finally, only 66% of the initiatives are laid low with A MonoBehaviour magnificence consists of empty methods. As formerly defined, this odor takes place whilst builders do now no longer delete     empty approach templates robotically generated via way of means of the IDE.
 
     RQ3 Summary: The studied smell types affect a proportion of projects ranging between 39% and 97%. While Coupling objects through the IDE Inspector is highly diffused (but also considered as an acceptable development practice), smells such as Getting a GameObject reference finding it by name, Allocating and destroying GameObjects in updates, and Animation speed depends on the frame rate are more acknowledged by developers and also occur in fewer projects.
+
+# 7 THREATS TO VALIDITY
+
+Threats to assemble validity issue the connection among idea and observation. Such threats might also additionally have an effect on RQ1 due to the fact we asked builders to offer their perceived significance of smells given a brief description of the problem. To mitigate this chance, we furnished a few explanatory examples. Also, no respondent indicated troubles approximately viable false impression withinside the questions. Another chance may be associated with the evaluation of heavyweight Update() methods, due to the fact, as defined in Section 5, UnityLinter provides a totally light-weight estimate. Finally, a chance will be because of errors withinside the implementation of UnityLinter. While we may want to notexclude such errors, we cautiously examined it on numerous video game examples earlier than carrying out the take a look at.
+
+Threats to inner validity issue elements inner to our take a look at that might impact our results. Primarily, such threats may be due to the guide evaluation of precision and recall, that can suffer from subjectiveness and incompleteness. We mitigated the former through carrying out an preliminary validation section with more than one annotators reading scent times in pairs and discussing them. The
+incompleteness changed into mitigated through letting unbiased annotators assessing the recall, after which evaluating and discussing their results. Also, as defined in Section 5.2, UnityLinter suffers from the imprecision of srcSlice and Doxygen.
+
+Threats to outside validity issue the generalization of our
+findings. First, the set of detected smells is in reality incomplete. A unique take a look at is wanted to very well look at a large set of smells which could have an effect on video games. Our work, instead, represents a first try to outline a few smells and offer detectors for them.
+Second, a few smells (e.G., Lack of separation of concerns) have been described for terribly unique instances and may be prolonged in destiny work.
+Finally, our take a look at worried the evaluation of open supply games. It is of paramount significance to increase the take a look at to in addition video
+games (along with business ones) that may be extra representative of the market.

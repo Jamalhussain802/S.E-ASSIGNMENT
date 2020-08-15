@@ -196,4 +196,7 @@ coupling thru the inspector, instead.
 
 Respondents commonly agree (66%) approximately the usefulness of setting apart concerns. However, thereis a vast percentage (24%) of impartial responses, in which respondents additionally said “It depends”, bringing up that an immoderate fragmentation of obligations in more than one MonoBehaviour scripts can also additionally bring about a waste of effort, code greater hard to be understood,and, above all, it is able to negatively have an effect on performances.
 
+# Coupling objects through the IDE Inspector.
+This is the maximum arguable of our smells: 31% of fine responses, 34% negative, and 35% of impartial. While respondents agree that an immoderate degree of coupling makes the venture hard to maintain,coupling thru the inspector has severa advantages. First, it's far higher than different solutions (use of Find or messaging systems) in phrases of performances. Second, it is straightforward to apply even for
+non-programmers (e.G., portraits experts) that take part withinside the improvement. Third, it's far beneficial for the duration of checking out activities, because it allows builders to attach/detach items.
 

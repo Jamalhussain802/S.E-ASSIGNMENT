@@ -346,3 +346,25 @@ games (along with business ones) that may be extra representative of the market.
 # 8 RELATED WORK 
 
 This section discusses related work about (i) design principles in video games, and (ii) empirical studies on video game development.
+
+# 8.1 Design principles in video game development
+
+Different authors have studied the way to observe layout concepts withinside the context of online game improvement [14, 17, 23, 29, 38, 40, 44], either via way of means of defining unique styles, or via way of means of making use of GoF layout styles (DPs) [26] withinside the context of online game improvement.
+
+Nystrom [40] proposes a revisited model of a few GoF DPs
+(particularly command, flyweight, observer, prototype, singleton, and state), and a hard and fast of unique DPs for the online game domain. In particular, Nystrom defines 13 layout styles grouped into four categories: sequencing styles (associated with time issues), behavioral styles (to outline and refine numerous behaviors in a manner they are
+clean to maintain), decoupling styles, and optimization styles
+(to hurry up a sport).
+
+The horrific smells we've got described and diagnosed are associated with the Nystrom’s DPs. For instance, Allocating and destroying GameObjects in updates is associated with Nystrom’s optimization styles, whilst Heavyweight Update techniques and Animation pace relies upon at the body price are associated with each sequencing and optimization categories. The Getting a GameObject reference locating it via way of means of call is associated with optimization and decoupling styles, whilst Coupling gadgets thru the IDE Inspector is associated with the decoupling styles, and the Lack of separation of worries associated with behavioral
+styles.
+
+The book by Murray [38] additionally proposes numerous varieties of layout answers for Unity video games, which include the usage of item pools or digital controllersBarakat et al. [17] advocate to combine creational and behavioral.
+
+DPs (particularly state, strategy, prototype, and observer) with a unique sport layout framework to offer the builders with a few hints on what DP to apply with the principle sport aspects. Such an integration could make less complicated reuse and preservation tasks. Ampatzoglou et al. [15] studied the correlation among layout sample software, software program defects, and debugging price in ninety seven Java open supply games. Even if the general quantity of layout sample times does now no longer correlate with disorder frequency and debugging effectiveness, a few unique layout styles regarded to have a giant effect at the quantity of mentioned insects and debugging
+price.
+
+Ampatzoglou et al. [14] studied the effect of DPs at the maintainability of open-supply games. Their end result indicated that DPs assist to growth maintainability, whilst growing the project size. Also, Ampatzoglou et al. [29] leveraged DPs to implement sport regulations and logic. They display that the usage of DPs on this context
+facilitates to keep away from introducing undesired complexity, and to growth reusability, maintainability and flexibility. Figueiredo et al. [23] performed an test that confirmed the effective effect of GoF styles in online game improvement. Other paintings mentioned layout reviews withinside the context of online game improvement. Qu et al. [44] mentioned an enjoy of software of DPs to clear up a quantity of issues in online game improvement, which include sprite and map management, or dealing with the sport state.
+
+While numerous papers and books may be discovered withinside the literature approximately satisfactory practices to apply in gaming improvement to improve their quality, no paintings is, on the satisfactory of authors’ knowledge, approximately horrific smells in video games, i.E., how and what kind of advised satisfactory practices aren't carried out in sport improvement. The handiest device related to our paintings is Rider [8], a industrial IDE for Unity improvement which highlights the usage of highly-priced Unity APIs. Our catalog goes past that as it capabilities distinctive varieties of smells.

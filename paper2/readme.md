@@ -85,3 +85,52 @@ Task 3 gives members a listing of ratings in a column referred to as Grade, star
 Task 4 gives members an unsorted stock listing of unique labels in a column referred to as Item with their fees indexed in a column referred to as Price. Their intention is, given a separate goal listing of labels, to create a button that populates a column Price for the objects with inside the goal listing primarily based totally at the stock listing. The Excel integrated characteristic VLOOKUP isn't always allowed on this venture.
 
 Task 5 gives members a listing of telecell smartphone numbers with inside the layout of (XXX)XXX-XXXX, and asks members to create a button that populates a column referred to as Area Code with unique location codes and their related counts in a column referred to as Count.
+
+# 2.3 Data Collection
+
+We evolved a Google Chrome extension2that information searchactivities and surfing records and deploys surveys. To seize the questions the members are looking to solve, we spark off customers with brief surveys periodically. In this way, we're capable of integrate the survey responses with logs analysis.
+
+# 2.3.1 Tool Implementation. 
+
+The implementation includes parts: a consumer-aspect Google Chrome browser extension for logging facts and a Flask net server for storing facts. On the consumer aspect, the browser extension does the following: 1) initialize browser nearby garage that holds the log statistics, inclusive of issuing aprecise 10-digit ID quantity to every participant, 2) song Google searches, three) song hyperlink clicks on all pages, 4) discover viable questionreformulations thru word-stage Levenshtein distance (if distance ≥  words [23]), 5) layout and installation the surveys, and 6) ship all accumulated logs to our server for garage. All accumulated facts are stored in a password-secured SQLite database on an encrypted server.
+
+# 2.3.2 Procedure. 
+
+The  examine become performed in a lab putting over sessions, 90mins every. Participants attended one lab sessiononly. Participants had been informed to put in the Google Chrome extension on their private laptops and preserve the extension enabled at some stage in the lab session.
+
+# 2.3.3 Surveys. 
+
+To keep away from over-taxing the members, a maximum of 10 surveys in keeping with hour had been deployed with a one-minute minimal c programming language among surveys. A survey is induced while a participant plays one of the following 4 actions:
+
+(1) Finishes installing the extension
+Preliminary Survey (Figure 1). We gather members’ technical historical past together with programming experience, their intentions of code search, and demographic statistics.
+
+(2) Makes a search
+Context Survey (Figure 2). We ask members approximately the sports they're doing, and the particular query they' resolving. Questions Q2, Q3, and Q5 are from earlier work [39].In addition, we ask what approach(es) they’ve followed to clear up the tasks.
+
+(3) Reformulates a query
+Query Reformulation Survey (Figure 3). A question is identified as a ability reformulation if its word-stage Levenshtein distance from the earlier question is more than or identical to. This survey verifies the reformulation with the aid of using asking in the present day question is associated with the preceding one. It additionally asks if the earlier question solved the problem. If so, how did it help; if now no longer, what statistics is missing.
+
+(4) Closes the tab Search 
+Tab Closed Survey (Figure 4). This survey asks if the earlier question solved the problem. If so, how did it help; if now no longer, what statistics is missing.
+A survey will now no longer be induced with the aid of using any occasion if the earlier survey is deployed inside a minute or the quantity of deployed surveys has reached the hourly limit.
+
+We requested members to finish the survey whenever it is deployed, despite the fact that of of entirety isn't always forced.
+
+# 2.3.4 Log Data. 
+
+A log access is created while a player performs one of the following cause events: searches, closes a tab, clicks a link, switches tabs, or switches to every other application. The logged facts includes:
+
+• UserID: A specific wide variety that distinguishes participants.
+
+• Time: Time of this activity.
+
+• Type: Types of browser activities, including: closed the tab, clicked a link, deployed survey, acquired survey responses.
+
+• URL: The url of the internet site the player clicked.
+
+• TabID: Browser-assigned ID for every tab to tune the tab activities.
+
+• Query: String from a web seek query
+
+

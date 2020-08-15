@@ -1,1 +1,1 @@
-[Paper 1](./Paper1/readme.md)
+[paper1](./paper1/readme.md)

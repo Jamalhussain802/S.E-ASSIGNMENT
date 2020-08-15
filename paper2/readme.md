@@ -237,3 +237,35 @@ All individuals have been graduate college students and the bulk claimed that th
 We use survey responses at the reformulation survey as floor reality for reformulations. However, individuals can also additionally have different notions approximately what's and isn't reformulation, which can also additionally effect the validity of the floor reality.
 
 The conclusions have been drawn primarily based totally on our individuals’ seek behaviors while the use of VBA, an event-pushed programming language utilized by Excel, which might not generalize to studying other languages.
+
+# 5 RELATED WORK
+
+We recognition on associated paintings that investigates code seek behaviors, explores end-users’ engagement with spreadsheets, and discusses the studying limitations in programming systems
+
+# 5.1 Code Search
+
+As with our have a look at, studies on wellknown statistics seek has additionallyconcerned scholar subjects (e.g., [52, 57].Of specific relevance, one have a look at located that college students perceived have a look at-oriented subjects as tougher to look for than each day existence statistics [52]. Prior paintings on code seek has yielded comparable results, locating that codeseek duties take extra attempt than statistics seek duties [34].
+
+Various research focusing mainly on code seek were accomplished via way of means of surveying contributors approximately the motives why they searched [21, 39, 45, 54], the equipment they searched with [46], the famous seek sites [48], in addition to their choice standards for code [27].Different information evaluation techniques also are followed, for  example, a few research centered on at once watching contributors’ behaviors [47], even as a few different research centered on accumulating and reading the logs, along with works performed via way of means of Brandt, et al. [7, 8], with player fixing the pre-decided on duties. Sadowski and colleagues [39] additionally blended surveys and logs to research builders’ code seek conduct while operating on each day duties.
+
+Automatic API advice and question reformulations are additionally being studied. Rahman, et al. proposed a unique question reformulation technique, which could translate a herbal language code seek question right into a ranked listing of applicable Java APIs [35, 36]. Various techniques for reformulation were followed via way of means of researchers, along with a small edit distance [39] or a doubtlessly big edit distance [23, 34]. In this paintings, we explicitly ask contributors approximately whether or not or now no longer their question is a reformulation if you want to avoid problems round automatic detection of question reformulation.
+
+Researchers [4, 34] mainly explored seek periods to learn the use of the internet seek via way of means of software program engineers. They concluded that the important intentions of internet seek are locating statistics to 1) debug an mistakes  or an issue, 2) accomplish a selected task,3) find out about a subject and 4) find out about a selected API element. The researchers additionally recommended that code associated queries are extra verbose [34]. Code associated queries additionally cause better fees of reformulation, longer live time, and less clicks [4, 34].
+
+Various code seek equipment were evolved to facilitate builders with trying to find the favored code, along with Koders, Krugle, and Sourcegraph. Despite those efforts, Google stays the most famous well known-motive seek engine with builders [46, 48], that’s why we goal it in our have a look at.
+
+# 5.2 Learning Barriers & Code Examples
+
+Learning limitations in programming structures can get up from the surroundings and accompanying libraries [26]. KO, et al. observed that rookies once in a while knew what set of interfaces ought to achieve a behavior, however did now no longer recognise a way to use and coordinating them. The use and coordination limitations are tough to conquer without well-written documentation and code examples [26].
+
+Prior research factor out that it's miles critical for API documentation to offer developers, especially individuals who are seeking to study a precise API, with enough and ok code examples [33, 37, 43]. Parnin and Treude  [33] examine that 90% of code-associated blog posts comprise code examples and snippets, with a media of three code snippets in keeping with post. McLellan, et al. [30] additionally summarize that the code examples supported numerous distinctive studying activities, consisting of information the libraries, protocols, and utilization context.
+
+These research echo our findings that 93.4% of the troubles that rookies encountered have been correctly solved via way of means of locating relevant API and code implementations (43.9% & 49.5% respectively, Section 3.3), and the maximum a success searches are those who consult assets with examples, consisting of documentation and official/ third party tutorials.
+
+# 5.3 End-User Programming and Spreadsheets
+
+End-person programming is described as “programming to acquire theend result of a application on the whole for personal, instead public use” [25].Unlike expert builders who're hired to build, maintainand take a look at software program over time, cease-person builders write programs to guide dreams of their very own domain names of expertise [12, 25, 31].
+
+According to Scaffidi, et al., over forty five million cease customers said that they “used spreadsheets or databases” in offices in 2001 [40]; however, most effective 20% of those employees indicated that they also “do programming.” However, 44% of spreadsheets contained formulas, presenting proof of programming in spreadsheets [13].
+
+Various research were carried out on spreadsheets, consisting of testing [38], code smells in formulas [12, 17, 22] and equipment for spreadsheet method transformation [16]. However, none take a look at how end users learn how to application in spreadsheets, what demanding situations they come upon at some point of programming, and the way they technique solutions. Our work, whilst now no longer especially focused on cease-customers, presents some insights demanding situations encountered while gaining knowledge of VBA automation.

@@ -71,3 +71,38 @@ observations additionally beef up the significance of making use of current stra
 specific refactoring [24, 27, 28, 34].
 
 (3) We located that new builders’ intents typically emerge alongside a evaluate and affect how builders choose and compose their refactorings. These observations display how interactive the refactoring technique is alongside code evaluations, i.E., builders generally tend to revisit, refine, and occasionally undo their refactorings primarily based totally on their peers’ feedbacks. This additionally demonstrates the significance of refining current strategies for refactoring conscious code evaluations (e.G., [19]), in order that builders interactively get hold of data and pointers that manual them on refining and choosing refactorings that make a contribution to their intents.
+
+# 2 BACKGROUND AND RELATED WORK
+
+# Modern Code Review 
+
+is a lightweight, informal, asynchronous, and usually tool-assisted exercise geared toward detecting and disposing of defects in elements of a software program project [2]. Examples of defects consist of bugs, overall performance issues, (un)intentional violations of design and/or architectural concepts or rules, and fashion violations [5, 50].
+
+The contemporary-day code evaluate method is initiated via way of means of the code proprietor that modifies the unique code base and submits a brand new code alternate to be reviewed. Other builders at the improvement group will serve as reviewers for the code alternate. Each reviewer inspects the code alternate, searching out defects, as defined above. After completing their inspection, every reviewer affords remarks withinside the shape of feedback to the code proprietor. This cycle is repeated till the reviewers attain an settlement to approve or reject the proposed code alternate.
+
+Reviews normally take numerous iterations, along with reviewers
+imparting remarks and the code proprietor making next adjustments
+in elements of the gadget below evaluate in reaction to the feedbacks
+till an settlement is reached. In our study, we use evaluate to suggest
+the whole method of a unmarried code evaluate, from filing a brand new
+code alternate for evaluate to approving or rejecting the integration
+of the alternate into the codebase. In addition, we use revision to
+suggest the unique iterations at some point of the cycle of a unmarried evaluate.
+
+# Refactoring and Developers’ Intents. 
+
+Software refactoring is a not unusualplace improvement exercise that goals at enhancing the internal shape of a software program gadget [18]. Previous research have shown that builders practice refactoring now no longer simplest on upkeep obligations however additionally in different obligations of the software program improvement lifecycle [23, 41, 46]. Such research indicated that function including and worm solving are additionally intents builders have once they carry out refactoring. This phenomena has have become recognised withinside the literature as floss refactoring.
+
+The first grasps at the builders’ intents and motivations when
+appearing refactoring emerged withinside the research furnished via way of means of MurphyHill et al. [29] and Negara et al. [30], wherein the authors investigated the variations among guide and automatic refactoring.
+
+These research discovered that refactoring operations are usually
+carried out along side different varieties of adjustments, typically as
+coaching for introducing a brand new function and worm solving.
+Silva et al. [46] monitored Github tasks to hit upon refactoring
+operations carried out in 124 systems. As those adjustments had been integrated into the systems, the authors carried out electronic mail interviews and surveys with the adjustments authors’ to evaluate their motivations in the back of the refactoring operations. Extracting a technique become cited because the maximum not unusualplace refactoring operation, wherein the main motivation is the coaching for brand new function developments. In preceding work, we carried out an research at the builders’ intents in the back of software program adjustments at some point of code evaluate [36, 37]. 
+
+We robotically diagnosed sizable architectural adjustments and
+investigated the context wherein such adjustments had been carried out. 
+A comparable research become carried on via way of means of Tufano et al.[54, where in the authors diagnosed the builders’ intents in the back of commits that delivered and eliminated code smells. In a current study, we analyzed refactoring sequences and discovered that builders frequently practice
+the identical refactoring kind at some point of a unmarried commit [6]. However, we did now no longer check out how builders compose and practice refactoring sequences primarily based totally on their intents.

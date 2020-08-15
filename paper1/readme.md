@@ -223,3 +223,6 @@ While recommendations (1) and (2) are out of scope for thiwork, we accompanied u
 
     RQ1 Summary: Developers generally agree about the usefulness of defecting performance-related issues, although they point out that only the excessive use of such practice might produce visible problems. Maintainability issues are less of a concern when the price to pay is reduced performance.
 
+# 5 UNITY LINTER - ARCHITECTURE AND IMPLEMENTATION 
+
+In this section we describe UnityLinter, a static analysis tool able to recognize 7 Unity smells, i.e., the 6 described in Section 3, plus the A MonoBehaviour class contains empty methods. UnityLinter has been developed as Python scripts, which takes as input a Unity project and, before detecting smells, extracts three pieces of information: (1) A parse tree of C# files using the srcML tool [21]. (2) A call graph using Doxygen [30]. Doxygen generates documentation starting from the source code. For this purpose, it is able to extract call graphs, inheritance diagrams, and collaboration diagrams. (3) Data flow information using srcSlice [13, 39]. After having extracted the parse tree, call graph, and data flow, we leverage them to identify the smells, using the rules described in the following.

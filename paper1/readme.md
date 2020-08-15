@@ -200,3 +200,26 @@ Respondents commonly agree (66%) approximately the usefulness of setting apart c
 This is the maximum arguable of our smells: 31% of fine responses, 34% negative, and 35% of impartial. While respondents agree that an immoderate degree of coupling makes the venture hard to maintain,coupling thru the inspector has severa advantages. First, it's far higher than different solutions (use of Find or messaging systems) in phrases of performances. Second, it is straightforward to apply even for
 non-programmers (e.G., portraits experts) that take part withinside the improvement. Third, it's far beneficial for the duration of checking out activities, because it allows builders to attach/detach items.
 
+# Animation speed depends on the frame rate. 
+
+There is a standard agreement (91% of superb solutions) on this case. At the identical time, respondents suggest that now no longer most effective Time.DeltaTimeought to be used to scale transforms and cause them to body rateindependent but, additionally, to carry out transforms interior FixedUpdate() in place of Update(). While Update() is completed as soon as in keeping with body,FixedUpdate() execution frequency relies upon at the body rate and, for this reason, could now no longer appearance quicker or slower.
+
+Fig. 4 shows, once more withinside the shape of diverging stacked bar charts, consequences associated with the perceived usefulness of UnityLinter, and whether the respondent could use it if to be had as a device. 64% of the respondents agreed approximately the usefulness of a UnityLinter, even as most effective 51%indicated that they could use it if to be had as a device. We conjecturedthat responses to those solutions should rely on the respondents’ improvement experience (standard and, in particular, with Unity). We checked this courting the use of permutation tests [16] (nonparametric opportunity to the Analysis of Variance), and we found no sizable consequences, i.E., the consumer notion of UnityLinter’s usefulness, and the willingness to undertake it as a device do now no longer rely on
+the developers’ experience.
+
+Finally, respondents furnished a few recommendations for in addition odor detection. These include:
+
+(1) Analysis of naming conventions. Note that, inside proper
+limits, that is to be had for language like Java (e.G., with CheckStyle) and in standard plenty of studies in this subject matter has been carried out [12, 31].
+
+(2) User interface-associated smells.
+
+(3) Lack of caching while the use of GetComponent().
+
+(4) Empty techniques in MonoBehaviour classes (generated with the aid of using the IDE) that motive pointless delays.
+
+Interestingly, respondents additionally talked about how lots of the Unity tutorials incorporate smells the various ones we advise and, i standard, code respondents agree with to be smelly.
+While recommendations (1) and (2) are out of scope for thiwork, we accompanied up on suggestion (3) accounting for it while imposing the Getting a GameObject reference locating it with the aid of using name, and (four) with the aid of using imposing a 7th odor detector, i.E., A MonoBehaviour class carries empty techniques.
+
+    RQ1 Summary: Developers generally agree about the usefulness of defecting performance-related issues, although they point out that only the excessive use of such practice might produce visible problems. Maintainability issues are less of a concern when the price to pay is reduced performance.
+

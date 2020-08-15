@@ -134,3 +134,8 @@ A log access is created while a player performs one of the following cause event
 • Query: String from a web seek query
 
 
+# 2.4 Participants
+
+We invited college students enrolled in a graduate software program engineering direction at North Carolina State University thru e mail to participate with inside the study (reaction rate: 42.6%). A quick advent to this study, inclusive of the reason thereof, and the tool (Google Chrome extension) used with inside the study, became made to be had to all potential individuals. As compensation, individuals who've the extension enabled and recording for at the least 45mins have been eligible to go into right into a drawing to win a $30 Amazon present card. In overall 23college students finished the preliminary surveys. After discarding statistics from5 individuals whose interactions have been recorded for much less than 10mins, we have been left with statistics from the closing 18 individuals for analysis (average: 78.5mins, median: 84mins, which consists of 4 girl college students and fourteen male college students.
+
+The 18 individuals self-said their knowledge in fashionable programming skills: one as a beginner developer, 5 as experts, and twelve as intermediates. Two individuals claimed to have prior operating enjoy with inside the industry. All individuals regularly seek on web sites for code, and the bulk of individuals every now and then or regularly ask buddies for help (16/18) or seek on IDEs (16/18). Participants got here from a various programming language background, inclusive of object-orientated programming languages and scripting languages, however now no longer VBA. The pinnacle 5 common programming languages utilized by the individuals have been: Java, JavaScript, C++, C, and Python.

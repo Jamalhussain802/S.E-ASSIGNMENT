@@ -106,3 +106,35 @@ We robotically diagnosed sizable architectural adjustments and
 investigated the context wherein such adjustments had been carried out. 
 A comparable research become carried on via way of means of Tufano et al.[54, where in the authors diagnosed the builders’ intents in the back of commits that delivered and eliminated code smells. In a current study, we analyzed refactoring sequences and discovered that builders frequently practice
 the identical refactoring kind at some point of a unmarried commit [6]. However, we did now no longer check out how builders compose and practice refactoring sequences primarily based totally on their intents.
+
+
+# 3 MOTIVATING EXAMPLE
+
+We undertake evaluation 58223 [12] from the couchbase-java-customer system (see Section 4.2) to inspire our empirical take a look at and depict the phenomenon we investigate. Through the path of this unique code evaluation, exclusive factors of the code alternate have been discussed, along with tests, licenses, fashion etc, which caused several changes withinside the supply code. However, to stay concise, we consciousness at the discussions and supply code adjustments related to the developers’ intents and refactoring operations.
+
+Figure 1 offers the refactoring operations finished withinside the lifecycle of evaluation 58223 (see Section 4.2 for info at the refactorings
+identity procedure). This evaluation occurred from 01/04/2016
+to 01/19/2016, and it's miles composed of 15 revisions, which can be indicated withinside the backside of the figure. The intention for this code alternate was to introduce a brand new set of training to examine precise elements of a JSON document with out the want to technique the entire document, wherein this
+inner API can be re-utilized by exclusive elements of the codebase.
+An excerpt of the evaluation’s description reads as “[The new] Subdocument API permits to mutate and study precise fragments of JSON
+inner an present file while not having to switch the whole
+file (...)”. One can sincerely infer from the outline that the
+code proprietor had the cause of including a brand new function to the codebase.
+
+Hence, the primary revision is composed in general of recent code being added to put in force the brand new JSON analyzing capability.
+In the second one revision, we take a look at the primary refactoring operation accomplished on this evaluation. Before this evaluation started, the elegance JsonTranscoder had a way referred to as jsonObjectToByteBuf() that turned into used to parse a JSON item into bytes to be similarly processed. Since the developer’s purpose turned into to create a widely wide-spread set of software instructions to study JSON files, the unique code from jsonObjectToByteBuf() turned into extracted into a brand new and greater widely wide-spread technique referred to as objectToByteBuf(). Notice that this refactoring operation turned into pushed through the developer’s purpose of including a brand new function, which, on the time this revision turned into submitted, did now no longer completely exist yet. Hence, present refactoring recommenders that awareness totally on structural development [26, 48, 51] might fail to assist the developer on this refactoring activity.
+
+In the next 10 revisions (from r3 to r12), the code proprietor changed elements of the code apart from elegance JsonTranscoder. Thus, the refactoring operation mentioned above remained a part of the code alternate till revision 12. In the meantime, reviewers of this code alternate supplied remarks concerning the codebase shape as a end result of the brand new function being added. One of the reviewers pointed out: “What do you reflect onconsideration on including a DocumentFragment interface and enforcing it as JSON (...) ?”. This remark shows that the builders concerned on this evaluation diagnosed an opportunity
+to enhance the system’s shape at the same time as introducing a brand new function.
+
+Hence, from this factor forward, the builders’ cause for this precise evaluation modified from totally including a brand new capability to combining codebase development and function implementation.
+
+As a end result, in revision 13, the code proprietor changed elegance JsonTranscoder again. In this new revision, the writer first reverted the elegance to its unique nation withinside the codebase. Hence, the refactoring operation that has been first accomplished in revision 2 has been undone.
+Instead, greater complicated refactorings had been accomplished to mirror the evaluation’s new purpose of enhancing the codebase shape. Method byteBufToClass() has been moved from elegance JsonTranscoder to elegance TranscoderUtils. Next, technique byteBufJsonValueToObject() has been extracted right into a widely wide spread technique byteBufToGenericObject(), which has been later moved to elegance TranscoderUtils. Finally, characteristic LOGGER has been moved from elegance JsonTranscoder to instructions TranscoderUtils and CouchbaseAsyncBucket.
+
+This example depicts extraordinary components of the way the builders’
+intents toward a code alternate have an effect on the manner they rent refactoring operations. In addition, it suggests how the iterative nature
+of the code evaluation system can also additionally lead builders to alternate their cause all through the path of a evaluation. First, we confirmed how refactoring operations can be hired to assist the addition of recent
+capabilities whilst that is the only purpose of a code alternate. Next, the remarks supplied through different builders all through the reviewing system
+brought about converting the unique purpose for the code alternate. As a end result, formerly accomplished refactoring operations had been undone and new
+refactorings had been accomplished to mirror the brand new intents
